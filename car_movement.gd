@@ -5,7 +5,7 @@ const TURN_SPEED = 400
 
 func _process(delta):
 	print(Engine.get_frames_per_second())
-	delta *= 20
+	#delta *= 20
 	# Handle input for movement
 	var input_vector = Vector2.ZERO
 	if Input.is_action_pressed("ui_up"):
