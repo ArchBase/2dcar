@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://dngahdbigokd0"]
+[gd_scene load_steps=5 format=3 uid="uid://dngahdbigokd0"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://car_movement.gd" id="1_8vyck"]
+[ext_resource type="Texture2D" uid="uid://15gqcb5p7uvx" path="res://car_red.png" id="1_y5pw0"]
+[ext_resource type="Texture2D" uid="uid://bns78lwnr8y2g" path="res://ground_grass.png" id="2_eemfk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_maqk5"]
+size = Vector2(76, 152)
+
+[node name="world" type="Node2D"]
+
+[node name="car" type="RigidBody2D" parent="."]
+script = ExtResource("1_8vyck")
+
+[node name="Sprite2D" type="Sprite2D" parent="car"]
+texture = ExtResource("1_y5pw0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="car"]
+position = Vector2(24, -1)
+shape = SubResource("RectangleShape2D_maqk5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ground" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("2_eemfk")
